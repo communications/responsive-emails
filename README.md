@@ -1,0 +1,1 @@
+##ulster.ac.uk responsive email template
