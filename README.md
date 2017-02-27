@@ -4,6 +4,10 @@
 
 Foundation for Emails takes the pain out of developing HTML emails by giving you a set of powerful, tested components out of the box. This includes a fully-responsive grid, buttons, callouts, menus, and more.
 
+##Usage
+
+Daro - /ulster-responsive-emails/src/pages/daro.html
+
 ##Installation
 
 Get started with the Sass-powered ZURB Stack for writing HTML emails.
@@ -20,7 +24,7 @@ npm start
 
 This will kick off the build process, which includes HTML parsing, Sass, image compression, and a server. When the initial build finishes, your browser will pop open a new tab pointing to your project. You'll be seeing a blank index.html file.
 
-##Tests
+##Testing
 
 If the foundation for emails frontend is strictly adhered to, then testing should be minimal as these components and temaplates have already been rigoursy tested with Litmus.
 
