@@ -13,11 +13,20 @@
 //   8. Thumbnail
 
 
+// 0. Ulster University Corporate Colour Palette
+$corp-gold: #bba461;
+$corp-gold-trans: rgba(187, 164, 97, 0.8);
+$corp-navy: #1a2a4f;
+$corp-navy-trans: rgba(26, 42, 79, 0.6);
+$corp-grey-dark: #4a4a49;
+$corp-grey-light: #b2b2b2;
+$corp-grey-light-trans: rgba(178, 178, 178, 0.5);
+
 // 1. Global
 // ---------
 
-$primary-color: #2199e8;
-$secondary-color: #777777;
+$primary-color: $corp-gold;
+$secondary-color: $corp-navy;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
