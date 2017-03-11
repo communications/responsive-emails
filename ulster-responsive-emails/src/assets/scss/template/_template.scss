@@ -135,7 +135,7 @@ table.button table tr td {
 
 .tile
 {
-  background: #fff;
+  background: #ffffff;
   margin-bottom: 10px;
   @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
@@ -170,6 +170,7 @@ table.button table tr td {
     td
     {
       height: 200px;
+      background: #FFFFFF !important;
     }
   }
 }
@@ -231,7 +232,7 @@ table.menu
 .section-style-one
 {
   width: 100%;
-  
+
   tr
   {
     td
