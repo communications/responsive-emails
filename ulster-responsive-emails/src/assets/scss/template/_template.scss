@@ -1,6 +1,14 @@
 // These are the styles to make some of the templates look extra nice.
 // Feel free to remove these styles for production!
 
+//
+@mixin dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.3), $hex: #B2B2B2) {
+  -webkit-filter: drop-shadow(#{$offX}px #{$offY}px #{$blur}px $rgba);
+  filter        : url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='" + $blur +"'/><feOffset dx='" + $offX + "' dy='" + $offY + "' result='offsetblur'/><feFlood flood-color='#{$rgba}'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+  -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=" + $offX + ", OffY=" + $offY + ", Color='" + $hex + "')";
+  filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=" + $offX + ", OffY=" + $offY + ", Color='" + $hex + "')";
+}
+
 // Body Styles 
 body,
 html, 
@@ -75,6 +83,19 @@ a
   }
 }
 
+h2,
+h3,
+h4,
+{
+  color: #42424D !important;
+
+  a
+  {
+    color: #000000;
+    font-weight: bold;
+  }
+}
+
 table.button table tr {
   margin-bottom: 1px;
   margin-top: 1px;
@@ -96,7 +117,7 @@ table.button table tr td {
   h2
   {
     color: #FFFFFF;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 0;
   }
 }
@@ -114,6 +135,8 @@ table.button table tr td {
 .tile
 {
   background: #fff;
+  margin-bottom: 10px;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
   td
   {
@@ -147,16 +170,35 @@ table.button table tr td {
       text-align: center;
     }
   }
+
+  h2
+  {
+    color: #ffffff !important;
+  }
 }
 
 .last
 {
   padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .first
 {
   padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+table.custom-wrapper
+{
+  tr
+  {
+    td
+    {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 }
 
 table.menu
