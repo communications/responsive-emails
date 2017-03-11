@@ -108,6 +108,7 @@ table.button table tr td {
 .section-one
 {
   background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-university.jpg');
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
   table.row
   {
@@ -157,10 +158,27 @@ table.button table tr td {
   }
 }
 
+.tile-list
+{
+
+}
+
+.tile-column
+{
+  tr
+  {
+    td
+    {
+      height: 200px;
+    }
+  }
+}
+
 .promo
 {
   background: $corp-gold;
   margin-top: 10px;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
   a
   {
@@ -207,5 +225,18 @@ table.menu
   {
     text-transform: uppercase;
     font-size: 12px;
+  }
+}
+
+.section-style-one
+{
+  width: 100%;
+  
+  tr
+  {
+    td
+    {
+      background: $corp-navy;
+    }
   }
 }
