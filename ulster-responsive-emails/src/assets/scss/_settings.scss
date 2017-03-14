@@ -26,7 +26,7 @@ $corp-grey-light-trans: rgba(178, 178, 178, 0.5);
 // ---------
 
 $primary-color: $corp-gold;
-$secondary-color: $corp-navy;
+$secondary-color: $corp-grey-dark;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
@@ -37,7 +37,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $pre-color: #ff6908;
 $global-width: 680px;
-$global-width-small: 95%;
+$global-width-small: 100%;
 $global-gutter: 10px;
 $body-background: $light-gray;
 $container-background: none;
@@ -120,7 +120,7 @@ $button-color-alt: $medium-gray;
 $button-font-weight: bold;
 $button-margin: 0 0 $global-margin 0;
 $button-background: $primary-color;
-$button-border: 0;
+$button-border: none;
 $button-radius: $global-radius;
 $button-rounded: $global-rounded;
 

@@ -105,21 +105,34 @@ table.button table tr td {
   background-color: none;
 }
 
+//custom
+
+a
+{
+  img
+  {
+    width: 100%;
+  }
+}
+
 .section-one
 {
   background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-university.jpg');
+  background-position: 100% 100%;
   @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
-  table.row
+  div
   {
     background: rgba(0,0,0,0.5);
+    padding: 20px;
+    height: 80px;
   }
 
   h2
   {
-    color: #FFFFFF;
-    font-size: 24px;
-    margin-bottom: 0;
+    color: #FFFFFF !important;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 }
 
@@ -156,6 +169,12 @@ table.button table tr td {
       margin: 0 auto;
     }
   }
+}
+
+img.standard-size
+{
+  width: 360px !important;
+  max-width: none !important;
 }
 
 .tile-list
@@ -196,30 +215,6 @@ table.button table tr td {
   }
 }
 
-.last
-{
-  padding-right: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.first
-{
-  padding-left: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-table.custom-wrapper
-{
-  tr
-  {
-    td
-    {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-}
-
 table.menu
 {
   a
@@ -229,15 +224,90 @@ table.menu
   }
 }
 
-.section-style-one
+.full-width
 {
   width: 100%;
+}
 
+/*.section-style-one
+{
   tr
   {
     td
     {
       background: $corp-navy;
+
+      h2
+      {
+        color: #ffffff !important;
+      }
     }
+  }
+}*/
+
+.section-style-one
+{
+  background-image: url('https://www.ulster.ac.uk/__data/assets/image/0019/122761/RS632_Sustainable-Technologies-027-lpr-new.jpg');
+  background-size: cover;
+
+  tr
+  {
+    td.background
+    {
+      background-color: rgba(0,0,0,0.3);
+
+      h2
+      {
+        color: #FFFFFF !important;
+      }
+    }
+  }
+}
+
+.section-style-two
+{
+  background-image: url('https://www.ulster.ac.uk/__data/assets/image/0020/122762/international-4257-new.jpg');
+  background-size: cover;
+
+  tr
+  {
+    td.background
+    {
+      background-color: rgba(0,0,0,0.3);
+
+      h2
+      {
+        color: #FFFFFF !important;
+      }
+    }
+  }
+}
+
+.section-style-footer
+{
+  tr
+  {
+    td
+    {
+      background: #333333;
+
+      *
+      {
+        color: #ffffff !important;
+      }
+
+      a.link
+      {
+        color: $corp-gold !important;
+      }
+    }
+  }
+}
+
+.right
+{
+  *
+  {
+    text-align: right !important;
   }
 }
