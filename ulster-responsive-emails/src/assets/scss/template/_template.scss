@@ -83,7 +83,6 @@ a
   }
 }
 
-h2,
 h3,
 h4,
 {
@@ -118,14 +117,12 @@ a
 .section-one
 {
   background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-university.jpg');
-  background-position: 100% 100%;
+  background-position: center 200px;
   @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
   div
   {
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    height: 80px;
+    padding: 20px 20px 0 20px;
   }
 
   h2
@@ -138,11 +135,20 @@ a
 
 .section-two
 {
-  background: none;
+  background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-graduate-magazine.png');
+  background-position: center top;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
 
-  .columns
+  div
   {
+    padding: 20px 20px 0 20px;
+  }
 
+  h2
+  {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 }
 
@@ -309,5 +315,44 @@ table.menu
   *
   {
     text-align: right !important;
+  }
+}
+
+.section-title
+{
+  font-size:18px;
+  line-height: 18px;
+  background-color: #000;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+  &.news
+  {
+    background-color: #A8002C;
+  }
+
+  &.spotlight
+  {
+    background-color: #588972;
+  }
+
+  &.donors
+  {
+    background-color: #738AAC;
+  }
+
+  &.events
+  {
+    background-color: #162C49;
+  }
+
+  &.benefits
+  {
+    background-color: $corp-navy;
   }
 }
