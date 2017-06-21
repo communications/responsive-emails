@@ -106,6 +106,12 @@ table.button table tr td {
 
 //custom
 
+h3
+{
+  font-size: 16px;
+  line-height: 18px;
+}
+
 a
 {
   img
@@ -272,7 +278,7 @@ table.menu
 
 .section-style-two
 {
-  background-image: url('https://www.ulster.ac.uk/__data/assets/image/0020/122762/international-4257-new.jpg');
+  //background-image: url('https://www.ulster.ac.uk/__data/assets/image/0020/122762/international-4257-new.jpg');
   background-size: cover;
 
   tr
@@ -316,6 +322,13 @@ table.menu
   {
     text-align: right !important;
   }
+}
+
+.image-link
+{
+  width: 220px;
+  overflow: hidden;
+  display: block;
 }
 
 /*.section-title

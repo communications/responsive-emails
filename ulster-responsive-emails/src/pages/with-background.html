@@ -1,7 +1,10 @@
 ---
 subject: Ulster University Alumni and Supporters
 ---
-
+<!-- Keyword -->
+<!-- %nested_get_image^eq:y:background-image\:url({nested_get_imageurl});:background-color\:#F0F0F0;% -->
+<!-- %nested_get_image^neq:y:background-color\:#F0F0F0;% -->
+<!-- %nested_get_image^neq:y:color\:#42424D!important;% -->
 <table class="full-width section-style-two">
   <tr>
     <td class="background"> 
@@ -9,41 +12,10 @@ subject: Ulster University Alumni and Supporters
         <spacer size="16"></spacer>
         <row>
           <columns small="12">
-            <h2 class="section-title news">Highlights and News</h2>
+            <h2 class="section-title news">%nested_get_title%</h2>
           </columns>
         </row>
-        <row>
-          <columns small="12" medium="3">
-            <a href="#"><img src="https://www.ulster.ac.uk/__data/assets/image/0005/27761/varieties/thumb-small.jpg" alt="alt text is important" /></a>
-            <table class="tile tile-column">
-              <tr>
-                <td> 
-                  <h3><a href="#">This is a heading</a></h3><p>This is additional text to demonstrate</p>
-                </td>
-              </tr>
-            </table>
-          </columns>
-          <columns small="12" medium="3">
-            <a href="#"><img src="https://www.ulster.ac.uk/__data/assets/image/0019/28153/varieties/thumb-small.jpg" alt="alt text is important" /></a>
-            <table class="tile tile-column">
-              <tr>
-                <td> 
-                  <h3><a href="#">This is a heading</a></h3><p>This is additional text to demonstrate</p>
-                </td>
-              </tr>
-            </table>
-          </columns>
-          <columns small="12" medium="3">
-            <a href="#"><img src="https://www.ulster.ac.uk/__data/assets/image/0004/27760/varieties/thumb-small.jpg" alt="alt text is important" /></a>
-            <table class="tile tile-column">
-              <tr>
-                <td> 
-                  <h3><a href="#">This is a heading</a></h3><p>This is additional text to demonstrate</p>
-                </td>
-              </tr>
-            </table>
-          </columns>
-        </row>
+        %asset_listing%
       </container>
     </td>
   </tr>
