@@ -331,6 +331,13 @@ table.menu
   display: block;
 }
 
+.issue
+{
+  color: #ffffff;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
 /*.section-title
 {
   font-size:18px;
@@ -369,3 +376,6 @@ table.menu
     background-color: $corp-navy;
   }
 }*/
+
+//fix exapned buttons - https://github.com/zurb/foundation-emails/issues/415
+.button.expand { td:not(.expander) { width: 100%; } }
