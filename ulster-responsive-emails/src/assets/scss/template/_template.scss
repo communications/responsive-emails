@@ -280,6 +280,7 @@ table.menu
 {
   //background-image: url('https://www.ulster.ac.uk/__data/assets/image/0020/122762/international-4257-new.jpg');
   background-size: cover;
+  background-color: #1a2a4f;
 
   tr
   {
@@ -289,7 +290,7 @@ table.menu
 
       h2
       {
-        color: #FFFFFF !important;
+        color: #FFFFFF;
       }
     }
   }
@@ -305,15 +306,15 @@ table.menu
 
       *
       {
-        color: #ffffff !important;
-      }
-
-      a.link
-      {
-        color: $corp-gold !important;
+        color: #ffffff;
       }
     }
   }
+}
+
+.link
+{
+  color: $corp-gold;
 }
 
 .right
@@ -377,5 +378,9 @@ table.menu
   }
 }*/
 
-//fix exapned buttons - https://github.com/zurb/foundation-emails/issues/415
-.button.expand { td:not(.expander) { width: 100%; } }
+//fix exapned buttons - http://foundation.zurb.com/forum/posts/39179-expanded-button-not-working-in-outlook
+.button.expanded {
+  td:not(.expander) {
+    width: 100%;
+  }
+}

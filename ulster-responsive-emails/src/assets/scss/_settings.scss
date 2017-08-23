@@ -118,7 +118,8 @@ $button-font-size: (
 $button-color: $white;
 $button-color-alt: $medium-gray;
 $button-font-weight: bold;
-$button-margin: 0 0 $global-margin 0;
+//$button-margin: 0 0 $global-margin 0;
+$button-margin: 0 0 0 0;
 $button-background: $primary-color;
 $button-border: none;
 $button-radius: $global-radius;
