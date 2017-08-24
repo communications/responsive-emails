@@ -183,12 +183,6 @@ a
   }
 }
 
-img.standard-size
-{
-  width: 360px !important;
-  max-width: none !important;
-}
-
 .tile-list
 {
 
@@ -302,7 +296,7 @@ table.menu
   {
     td
     {
-      background: #333333;
+      background: darken($corp-navy, 10%);
 
       *
       {
