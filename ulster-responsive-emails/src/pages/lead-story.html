@@ -2,15 +2,37 @@
 subject: Ulster University Alumni and Supporters
 ---
 
+%begin_asset_metadata_Alumni.Newsletter.Lead.Story.Heading%
 <container>
   <row>
     <columns large="6">
-      <img src="https://www.ulster.ac.uk/__data/assets/image/0005/27761/varieties/thumb-newsletter.jpg" alt="" />
+      %begin_asset_metadata_Alumni.Newsletter.Lead.Story.Related.Image%
+        <a href="%asset_metadata_Alumni.Newsletter.Lead.Story.Link^as_asset:asset_url%"><img src="%asset_metadata_Alumni.Newsletter.Lead.Story.Related.Image^as_asset:image_v_thumb-large_url%" alt="" /></a>
+      %else_asset_metadata_Alumni.Newsletter.Lead.Story.Related.Image%
+        <a href="%asset_metadata_Alumni.Newsletter.Lead.Story.Link^as_asset:asset_url%"><img src="https://www.ulster.ac.uk/__data/assets/image/0005/27761/varieties/thumb-large.jpg" alt="" /></a>
+      %end_asset_metadata_Alumni.Newsletter.Lead.Story.Related.Image%
     </columns>
     <columns large="7">
-      <h2><a href="#">Lead story title</a></h2>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-      <a href="#">Read more</a>
+
+      %begin_asset_metadata_Alumni.Newsletter.Lead.Story.Link%
+        <h2><a href="%asset_metadata_Alumni.Newsletter.Lead.Story.Link^as_asset:asset_url%">%asset_metadata_Alumni.Newsletter.Lead.Story.Heading%</a></h2>
+      %else_asset_metadata_Alumni.Newsletter.Lead.Story.Link%
+        <h2>%asset_metadata_Alumni.Newsletter.Lead.Story.Heading%</h2>
+      %end_asset_metadata_Alumni.Newsletter.Lead.Story.Link%
+
+      %begin_asset_metadata_Alumni.Newsletter.Lead.Story.Text%
+        <p>%asset_metadata_Alumni.Newsletter.Lead.Story.Text%</p>
+      %end_asset_metadata_Alumni.Newsletter.Lead.Story.Text%
+
+      %begin_asset_metadata_Alumni.Newsletter.Lead.Story.Link%
+        %begin_asset_metadata_Alumni.Newsletter.Lead.Story.Link.Text%
+          <a href="%asset_metadata_Alumni.Newsletter.Lead.Story.Link^as_asset:asset_url%">%asset_metadata_Alumni.Newsletter.Lead.Story.Link.Text%</a>
+        %else_asset_metadata_Alumni.Newsletter.Lead.Story.Link.Text%
+          <a href="%asset_metadata_Alumni.Newsletter.Lead.Story.Link^as_asset:asset_url%">Read more</a>
+        %end_asset_metadata_Alumni.Newsletter.Lead.Story.Link.Text%
+      %end_asset_metadata_Alumni.Newsletter.Lead.Story.Link%
+
     </columns>
   </row>
 </container>
+%end_asset_metadata_Alumni.Newsletter.Lead.Story.Heading%
