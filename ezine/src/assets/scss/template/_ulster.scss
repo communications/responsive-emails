@@ -1,0 +1,331 @@
+@mixin dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.3), $hex: #B2B2B2) {
+  -webkit-filter: drop-shadow(#{$offX}px #{$offY}px #{$blur}px $rgba);
+  filter        : url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='" + $blur +"'/><feOffset dx='" + $offX + "' dy='" + $offY + "' result='offsetblur'/><feFlood flood-color='#{$rgba}'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+  -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=" + $offX + ", OffY=" + $offY + ", Color='" + $hex + "')";
+  filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=" + $offX + ", OffY=" + $offY + ", Color='" + $hex + "')";
+}
+
+// Body Styles 
+.container.header {
+  background: #f3f3f3;
+}
+
+.body-drip {
+  border-top: 8px solid #663399;
+}
+
+// Full Width Headers
+.header {
+  background: $corp-navy;
+}
+
+.header .columns {
+  padding-bottom: 0;
+}
+
+.header p {
+  color: #FFFFFF !important;
+  padding-top: 60px;
+}
+
+.header .wrapper-inner {
+  padding: 20px;
+}
+
+.header .container {
+  background: transparent;
+}
+
+// Social Media
+table.button.facebook table td {
+  background: #3B5998 !important;
+  border-color: #3B5998;
+}
+
+table.button.twitter table td {
+  background: #1daced !important;
+  border-color: #1daced;
+}
+
+table.button.google table td {
+  background: #DB4A39 !important;
+  border-color: #DB4A39;
+}
+
+.wrapper.secondary {
+  background: #f3f3f3;
+}
+
+//custom styles
+a
+{
+  h4
+  {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  span
+  {
+    font-size: 14px;
+    color: #000000;
+  }
+}
+
+h3,
+h4,
+{
+  color: #42424D !important;
+
+  a
+  {
+    color: #000000;
+    font-weight: bold;
+  }
+}
+
+table.button table tr {
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+table.button table tr td {
+  background-color: none;
+}
+
+//custom
+
+h3
+{
+  font-size: 16px;
+  line-height: 18px;
+}
+
+a
+{
+  img
+  {
+    width: 100%;
+  }
+}
+
+.section-one
+{
+  background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-university.jpg');
+  background-position: center 200px;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
+
+  div
+  {
+    padding: 20px 20px 0 20px;
+  }
+
+  h2
+  {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+.section-two
+{
+  background-image: url('https://cdn.ulster.ac.uk/home/ulster-frontend/img/daro-email/ulster-graduate-magazine.png');
+  background-position: center top;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
+
+  div
+  {
+    padding: 20px 20px 0 20px;
+  }
+
+  h2
+  {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+.tile
+{
+  background: #ffffff;
+  margin-bottom: 10px;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
+
+  td
+  {
+    padding: 10px;
+  }
+
+  &.center
+  {
+    *
+    {
+      text-align: center;
+    }
+
+    img
+    {
+      margin: 0 auto;
+    }
+  }
+}
+
+.tile-list
+{
+
+}
+
+.tile-column
+{
+  tr
+  {
+    td
+    {
+      height: 200px;
+      background: #FFFFFF !important;
+    }
+  }
+}
+
+.promo
+{
+  background: $corp-gold;
+  margin-top: 10px;
+  @include dropShadow($offX: 2, $offY: 2, $blur: 2, $rgba: rgba(0, 0, 0, 0.1), $hex: #EEEEEE);
+
+  a
+  {
+    *
+    {
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+
+  h2
+  {
+    color: #ffffff !important;
+  }
+}
+
+table.menu
+{
+  a
+  {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+
+.full-width
+{
+  width: 100%;
+}
+
+/*.section-style-one
+{
+  tr
+  {
+    td
+    {
+      background: $corp-navy;
+
+      h2
+      {
+        color: #ffffff !important;
+      }
+    }
+  }
+}*/
+
+.section-style-one
+{
+  background-image: url('https://www.ulster.ac.uk/__data/assets/image/0019/122761/RS632_Sustainable-Technologies-027-lpr-new.jpg');
+  background-size: cover;
+
+  tr
+  {
+    td.background
+    {
+      background-color: rgba(0,0,0,0.3);
+
+      h2
+      {
+        color: #FFFFFF !important;
+      }
+    }
+  }
+}
+
+.section-style-two
+{
+  //background-image: url('https://www.ulster.ac.uk/__data/assets/image/0020/122762/international-4257-new.jpg');
+  background-size: cover;
+  background-color: #1a2a4f;
+
+  tr
+  {
+    td.background
+    {
+      background-color: rgba(0,0,0,0.3);
+
+      h2
+      {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.section-style-footer
+{
+  tr
+  {
+    td
+    {
+      background: darken($corp-navy, 10%);
+
+      *
+      {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.link
+{
+  color: $corp-gold;
+}
+
+.right
+{
+  *
+  {
+    text-align: right !important;
+  }
+}
+
+.image-link
+{
+  width: 220px;
+  overflow: hidden;
+  display: block;
+}
+
+.issue
+{
+  color: #ffffff;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+//fix exapned buttons - http://foundation.zurb.com/forum/posts/39179-expanded-button-not-working-in-outlook
+.button.expanded {
+  td:not(.expander) {
+    width: 100%;
+  }
+}

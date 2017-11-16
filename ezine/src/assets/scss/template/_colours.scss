@@ -1,0 +1,97 @@
+/**
+ *
+ * =======================================================================
+	 Colours
+ * =======================================================================
+ */
+
+//$body-background: #f4f4f4;
+$body-background: #F2F2EC;
+
+/*
+ * corporate
+ */
+$corp-gold: #bba461;
+$corp-gold-trans: rgba(187, 164, 97, 0.8);
+$corp-navy: #1a2a4f;
+$corp-navy-trans: rgba(26, 42, 79, 0.6);
+$corp-grey-dark: #4a4a49;
+$corp-grey-light: #b2b2b2;
+$corp-grey-light-trans: rgba(178, 178, 178, 0.5);
+
+/*
+ * wider web colour pallette
+ */
+$yellow: #f9b000;
+$orange: #e84e0f;
+$red: #e11f21;
+$pink-one: #e2388c;
+$purple: #521b65;
+$purple-light: #9677A2;
+$pink-two: #e6adbe;
+$green-one: #7ab929;
+$green-two: #41510d;
+$green-three: #6b8072;
+$blue-one: #00a7d7;
+$blue-two: #587991;
+$blue-three: #abc6d6;
+$lines: lighten(#bfc1c3, 5%);
+$side-bar-grey: lighten($corp-grey-light, 23%);
+$nav-bg-color:rgba(16,43,87,1);
+$sitename-color:#fff;
+$linkcolour: #2e8aca;
+$headinglinkcolour: #005ea5;
+$headinglinkcolourhover: #2b8cc4;
+$dividercolour: #ddd;
+
+/*
+ * faculties
+ */
+//$art: #722343;
+//$art-design-built-environment: #c7114f;
+//$computing: #d65e06;
+//$social-sciences: #357e29;
+$life-health-sciences: #005b71;
+$life-health-sciences-light: #a0cde1;
+$ulster-business: #0db4e6;
+
+//updated restructure colours - 14/8/17
+////Faculty of Computing, Engineering & the Built Environment
+$computing: #492a52;
+$art-design-built-environment: #c71050;
+////Faculty of Arts, Humanities & Social Sciences
+$social-sciences: #c71050;
+$art: #c71050;
+
+/*
+ * additional campaign alpha
+ */
+$campaign-trans: rgba(114, 35, 67, 0.5);
+
+/*
+ * links
+ */
+$link_colour: lighten($corp-navy, 8%);
+
+/*
+ * going places campaign
+ */
+$gp-achievers: #c7114f;
+$gp-achievers-sub: #661e3c;
+$gp-researchers: #00a4d7;
+$gp-researchers-sub: #073C50;
+$gp-business: #722343;
+$gp-business-sub: $corp-gold;
+$gp-networkers: #357e29;
+$gp-networkers-sub: darken(#bfcf5a, 20%);
+$gp-networkers-sub-org: #bfcf5a;
+
+/*
+ * theacademy
+ */
+$academyGreen: #1b3533;
+$academyGreenTrans: rgba(27, 53, 51, 0.5);
+$academyDarkGrey: #3a3c3d;
+$academyDarkGreyTrans: rgba(58, 60, 61, 0.7);
+$academyLightGrey: #d3d8d6;
+$academyLightestGrey: #e7eeea;
