@@ -1,0 +1,2552 @@
+Received: from AM0PR06MB4260.eurprd06.prod.outlook.com (2603:10a6:6:2f::34) by
+ DB7PR06MB4268.eurprd06.prod.outlook.com with HTTPS via
+ DB6P190CA0021.EURP190.PROD.OUTLOOK.COM; Tue, 11 Dec 2018 12:35:57 +0000
+Received: from VI1PR06CA0117.eurprd06.prod.outlook.com (2603:10a6:803:8c::46)
+ by AM0PR06MB4260.eurprd06.prod.outlook.com (2603:10a6:208:76::26) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1404.22; Tue, 11 Dec
+ 2018 12:35:56 +0000
+Received: from VE1EUR03FT029.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e09::208) by VI1PR06CA0117.outlook.office365.com
+ (2603:10a6:803:8c::46) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1404.19 via Frontend
+ Transport; Tue, 11 Dec 2018 12:35:55 +0000
+Authentication-Results: spf=pass (sender IP is 159.135.229.141)
+ smtp.mailfrom=mail-eu.geckoform.com; ulster.ac.uk; dkim=pass (signature was
+ verified) header.d=mail-eu.geckoform.com;ulster.ac.uk; dmarc=fail action=none
+ header.from=ulster.ac.uk;
+Received-SPF: Pass (protection.outlook.com: domain of mail-eu.geckoform.com
+ designates 159.135.229.141 as permitted sender)
+ receiver=protection.outlook.com; client-ip=159.135.229.141;
+ helo=m229-141.mailgun.net;
+Received: from m229-141.mailgun.net (159.135.229.141) by
+ VE1EUR03FT029.mail.protection.outlook.com (10.152.18.107) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1382.18 via Frontend Transport; Tue, 11 Dec 2018 12:35:53 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mail-eu.geckoform.com;
+ q=dns/txt; s=mx; t=1544531747; h=Content-Type: Mime-Version: To:
+ Reply-To: From: Subject: Date: Message-Id: Sender;
+ bh=KASOZvRNgaf2Ad2Hv6JJrrQO6cBzwvZwaIFKWCte4U0=; b=QyFpi0i6GqXJUoO+DNZ9ASz7GjqHrMvBq9qHXqocVFKjLnnlXYY3T2eUj06WWDUVkD7NmSjO
+ BQO4LLmMkuwlilRX2rWwtVuN7TE2wnKF5oVbTn5ebVEGvvWpapC8nrnu+3KcA9FmJGQold/k
+ kNPknQNQ4hRI4MHMhsZl0opXfiU=
+X-Mailgun-Sending-Ip: 159.135.229.141
+X-Mailgun-Sid: WyJmYTg3OCIsICJnLmJveWRAdWxzdGVyLmFjLnVrIiwgIjVhYjhmYiJd
+Sender: international=ulster.ac.uk@mail-eu.geckoform.com
+Received: from [127.0.0.1]
+ (ec2-34-248-224-103.eu-west-1.compute.amazonaws.com [34.248.224.103]) by
+ mxa.mailgun.org with ESMTP id 5c0faf23.7f952f263db0-smtp-out-n01; Tue, 11
+ Dec 2018 12:35:47 -0000 (UTC)
+Message-Id: <d7a465e0a84430177efc67c89d708c86@swift.generated>
+Date: Tue, 11 Dec 2018 12:35:45 +0000
+Subject: Test
+From: Ulster University International - DO NOT USE
+ <international@ulster.ac.uk>
+Reply-To: international@ulster.ac.uk
+To: g.boyd@ulster.ac.uk
+Mime-Version: 1.0
+X-Ses-Configuration-Set: SES_MessageEvents_eu-west-1_production
+X-Mailgun-Variables: {"message_id" : "750_859701"}
+X-Gecko-Message-Id: 859701
+X-Gecko-Account-Id: 750
+Return-Path: bounce+4f2786.5ab8fb-g.boyd=ulster.ac.uk@mail-eu.geckoform.com
+X-MS-Exchange-Organization-ExpirationStartTime: 11 Dec 2018 12:35:55.4701
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 2:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 6da94fc2-3ea4-4ba1-0315-08d65f653200
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 6f0b9487-4fa8-42a8-aeb4-bf2e2c22d4e8:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-Forefront-Antispam-Report:
+ CIP:159.135.229.141;IPV:NLI;CTRY:US;EFV:NLI;SFV:NSPM;SFS:(31580200002)(2980300002)(286005)(31014005)(189003)(13614003)(199004)(30844003)(221733001)(108616005)(7116003)(77096007)(24736004)(14444005)(42882007)(106466001)(336012)(7636002)(3450700001)(7596002)(33964004)(33896004)(7246003)(3480700005)(6916009)(16586007)(956004)(476003)(7126003)(236005)(54896002)(6306002)(9686003)(126002)(53946003)(486006)(16003)(34756004)(106002)(606006)(43066004)(120006004)(6636002)(1096003)(120886001)(8676002)(71190400001)(26005)(74482002)(7066003)(2351001)(356004)(104016004)(19627405001)(84326002)(733005)(246002)(110446001)(19630485002)(7846003)(2361001)(6392003)(569006);DIR:INB;SFP:;SCL:1;SRVR:AM0PR06MB4260;H:m229-141.mailgun.net;FPR:;SPF:Pass;LANG:en;PTR:m229-141.mailgun.net;MX:1;A:0;
+X-Microsoft-Exchange-Diagnostics:
+ 1;VE1EUR03FT029;1:MChzJbifXZVdfoA5gx9pjNRvZLCrb7aR0Qg+CxMHwFPa0mMKYMBtKUUPe35vmuPSLXcIs/fw2KQSh9SK2QbN+aWw3Otr/AV6mhOe2oR3vekeThoj2ktv/4aPuhpkypEt
+X-MS-Exchange-Organization-AuthSource:
+ VE1EUR03FT029.eop-EUR03.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 6da94fc2-3ea4-4ba1-0315-08d65f653200
+X-Microsoft-Antispam:
+ BCL:2;PCL:0;RULEID:(2390098)(7020095)(4652040)(5600074)(711020)(4605076)(4614076)(1401299)(8001031)(1421009)(1405096)(71702078);SRVR:AM0PR06MB4260;
+X-Microsoft-Exchange-Diagnostics:
+ 1;AM0PR06MB4260;3:JqI/j4Wuxxo/nk8tPdntFYEzlvQgCbBZKPPgNxeuuSFBuTigNKEJM1wmn4oxgeFjZxNiQIebt4m97WUnbIhTdeMQt5yKI6+22vnKfcIQhIzzEYQMgasz5sBXEuChL1Gu3SmBYy2Q4fhxCbh92M1S3VX8b3KJKWHkV3mO8W0ZXxTm7H4rSULZMehrGGTdK0zV3p9nO1SWJhM3RH/W2A+2lbkuGD+4EGIULiVBB1DJbv3IdM1+OU93sCXBGcqQdozp7z+d1oz32JiMbE2D3XwnaL1i/Ken7075fvpVNDL9dIdgv23buS55CeIfcr7YgaB1wEQU4ePsuKBYs9BIEgZhqVvBiPZb+TDDxyXRpNj3VK4=;25:6L1RzYN1VtVPuprzTxDK25cHG5rTmz+foDuv1/cvO0U25m/xrMGU+QBwwwpK0Z8/4SUz2FDm7A5Ax2+qwLky3rCQm+cZCmZVQu5fXFgAXXy8DJ2Cvhovw6H/FoV+6dQM8Zn7jZGODV6X41I+uYMZKaqbn2dEFeI5By8A5JzMlwjSJt89gMH9Ymd8EByKzQ6zWxJJROysIYKbJG6etHUu6cfpFCrlR5eYxp3Iv5+ySl5FuQoYHaZewjEJttiBYN25Rb47xksCcoKUbZ5Z01f0mHdAxymbpmSlCvyzZVTvoU0STHiqHFExDCYNklf3umKBXBl8HBK3XD4WMWlprRic07KSfFif4MNRNsu8gmQyQgk=
+X-MS-TrafficTypeDiagnostic: AM0PR06MB4260:
+X-Microsoft-Exchange-Diagnostics:
+ 1;AM0PR06MB4260;31:ro15VRW4W1E9C1wgkBPSTB3y2emKUil54dph9IsE5cpPqXLoyrozqmCm06VEsKK+PNqIgNza9+ytZuIgBRmqunPqlG1RQEGvffxU2ZastSm5/VssQ9MQoamZPhqeAa+adHyYYv6PzYKjt/5mJ7iFm2q3IvyALHkG6kcjt7dWqUKXBv2Wr8X8igjZwaJx4Z61aNihsTrqmtEYLH761NIM2W9WYO5gOnOCxAy18PW2+70=;20:1d1zTn+ELNitdhW9wyuqQ8Chzep8M2YGz0fHuR1wxIVy3rZPHwT0B4YSqyM9ssJlX9wyRmovHIxeWM190vlRsVQwgv5UzVTnXG/Ln8z1SbkjICGYVwsufEOhsBQS7LpsKcWTC/UFzPVqqL3OjfcsJEdQZUl76oFufZkq4yAvYJJDIZsOt0YYZV4HAGdfKigBkTngCqKvDGZvQ4L8kNhsgn4L10OCBuykedcDs8S3C+knE9oQKmjtemQga8y5phm/+jNHj3I9GwJKPf/ZsFnz0H7lz6/I5gkhMgQOMeHg7PF8OBAmUTGIcbG//SOI+ON5J+BEe6iq8nWmQ5KymOl9QxUmURGtVVv+Lkz2AZpbo/Jlm/Xyh5L1YFDJzGzIF4UZc3tGJHG6zQDMe+h7Z7bIHI/BMN8ej1bodOYt3PoVLKLb5C55VhGH3e+ovB+IzU9trwxwAcMeuA61IOkiffu9UHJXy5Ks5ymVKQrPuUQRZTbmaJTabOpPFTQEoLDjXL1T
+X-MS-Exchange-Organization-BypassClutter: true
+X-Exchange-Antispam-Report-CFA-Test:
+ BCL:2;PCL:0;RULEID:(8211001083)(20180801055)(2018062399030)(2018011200283)(701106)(2401047)(9101504095)(8121501046)(9101519053)(52410047)(2018011210174)(2018011211064)(2018011212028)(2018011213028)(2018011214028)(2018011215028)(2018011216028)(2018011217028)(2018011218028)(2018011219092)(2018011220252)(2018011221063)(2018011222027)(2018011223027)(2018011224027)(2018011225035)(2018011229035)(2018011232269)(2018011233052)(2018021202149)(98810176)(2018021203149)(98815176)(823301158)(823300264)(823311075)(9101536074)(3002001)(93006095)(93005095)(12181508095)(3231455)(901025)(902075)(913088)(999002)(7045084)(944501520)(9300010083)(9301004419)(52103095)(52102170)(52104123)(52105112)(52106170)(52408095)(98821027)(98822027)(52401380)(52505095)(52406095)(52305095)(52206095)(88860335)(1102011)(12181507107)(10201501046)(148016)(201708071742011)(7699051)(76991095);SRVR:AM0PR06MB4260;BCL:2;PCL:0;RULEID:;SRVR:AM0PR06MB4260;
+X-Microsoft-Exchange-Diagnostics:
+ 1;AM0PR06MB4260;4:2xZUOaBAKvmAgqbouG4ZiBlxvZoBQyBI07HI+384UkERq6+Y/xHNG4IqA+deIlLETdXIVBbvfyTpEyRBV3vjC64U/uZWHL61tlOjs5O4Ts4vuDClaHzXtzklvwFgydJTm+vCkj8j4bTEeKI4QxIRmCH8/AUS0wGvEJ5rbzQn93BMXLLR4xs447rczdFo3by8qc01rxrbDZgSKVXTvZ/DOCkkh5BBPkGbOtZbbE9hJ95Ga51aEoOcP1WOpTydmMivTtFCH9gA7eEiDRGtiivZcQ==
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Exchange-Diagnostics:
+ =?us-ascii?Q?1;AM0PR06MB4260;23:kvw5AkaNMvI+2z9qVT3oWXuTxWSfZtRIbRM6nKoIZ?=
+ =?us-ascii?Q?k5vN8OcH5t7oIhmuvY5voSY6dfhs/hCbUoeQnDYUOVb+mYDkUS1XruqE9arK?=
+ =?us-ascii?Q?UmEgeK/xxNpLdFVuM2PMBwuHLQ5YVoldTAqauXOWuMp2CMJwqPk1diUz7YgN?=
+ =?us-ascii?Q?WvsbUa856tBjMlKyVhUZZ6612GS8VJfJFU1I0fjhH7WA7shpFYH/2Pv+htnx?=
+ =?us-ascii?Q?DV/frjUlls0G2Suo79JztZPMqrWqXE/uYqlTaXho+Vq31Tbw0MVzotXvr58A?=
+ =?us-ascii?Q?c5JbFjOfWCq9xQVXxUCgGbSt7eekyX6ZbJ5SPh6Dpt/BhiHi3BMAOogKqqWC?=
+ =?us-ascii?Q?Rn4AdOd4bs+xskVmQ8gLvVSU6jpjckGGLPEpMBb8i0OB1lHKP0YngnwKtWzb?=
+ =?us-ascii?Q?K2HTJwCDxs88YogvMf+rJcWIsaKVcvyBa6BjQnInXX0bk6A/uzCZcCOJ/nxO?=
+ =?us-ascii?Q?eTpiHAG33iC4tx+P/tKaQ7guEw1pUT90RuAXPN5P7Jq4HZJAEeexZyZK+R6v?=
+ =?us-ascii?Q?pZYAuEsRuT4Obvo9aG4qxV21TEHGXYC/lpDto4sWv7DcOqpq5oLWXJcGpRHC?=
+ =?us-ascii?Q?QJWhmE0vynYdPxKG5DepwZdtGTI3x0NzgV3i7fCQ1nSi21PeA456Jwr8FoKo?=
+ =?us-ascii?Q?ZfBJwCbREwROjeWTiuDyITFNzBnf4n/x3PdSbp7mrAf3RdT5mmfzrCF3L6Jb?=
+ =?us-ascii?Q?jjVmE6CPuUytafxY79gbQo5UJ/TX+rYW7Lx74iK/SnhOI0hmZZMmWmciT4Wx?=
+ =?us-ascii?Q?UPGFcV+B8eeXhpjWPb54Maha38AGuXIpBIMoHwo+2kYGOolz9PrwTXRP8VIY?=
+ =?us-ascii?Q?uV5p/YVMzXXDmZ0KARAGcEQVjy4F/VEdRTaUobAOgnP9LcdXqWA+EFXpBDUW?=
+ =?us-ascii?Q?3FIirMu3aoIu93XJynJjzeDaWarmKPRiflUMsltBxzE6AJKrkQ2eiwe5qC34?=
+ =?us-ascii?Q?Gx6j4t2UIEUAMazWFtZadF5HvnsHW/ZlSiOvnONSYmwHQAQyNVB7sw1o5Oa9?=
+ =?us-ascii?Q?G75jroVBJ5CmqJRjE7U42Qq9i7EnB8hEnU9/EW1HXr+Xik9EUnfUGKJvrdyG?=
+ =?us-ascii?Q?QXo6WSFvLnsjUi/fuGa0jF6dOMp6ggLNh5uXXGvK96Pd/Q9ZD6ATBJU9Aep7?=
+ =?us-ascii?Q?2mP05148y3ZfXiBuP5oYngQvgHE09ODpsaXsuOGZvIU6B+r7tPcYuYtBJWMN?=
+ =?us-ascii?Q?6fV126XxkV5jKl2YDf7DTSymDEyxq/XJDTjjZBIKQCq+Rw8xxgqIU4W1RNco?=
+ =?us-ascii?Q?LRsoD4Wu2JHZ/Rx3dzzbg4zubeGWQKX38eCuGNN7WzIxJ7DsysHrSipooj1z?=
+ =?us-ascii?Q?Sw5wQVWCHLtCDffc2JnjjT+6c/YVVdwB8KwUAqrOv9NNo8PEoErupGClQEgQ?=
+ =?us-ascii?Q?9ThTZEMtqG32uGV+53MOtY5QAs=3D?=
+X-Microsoft-Exchange-Diagnostics:
+ 1;AM0PR06MB4260;6:3NTV9PFBjh3/jYTaFAg6Q7BxMNQoIiHt6lrEkij4w9L3vV/cuaZIvpUQJvirnCYCoUlvTOdzypnGA5yBSvqmcMx6OJMpFiZa09C1ebfQQzfRHg/Az1Dc5IFlR+KIQ2bN9DcFLkf+E20ECyLRZzcytcUIYKSRWgNZsaPKVVkg2bgNYAnJ7WaSU8mpALMDvHdwc0+yEi4xIXflWI1cLAPn9WQLZ3ezA3zldXgdQgEmpoTsz7I1DO4Zm85VW7e9Fv5XhIliJwtnKX5aphm35/PnjTjOOFCd6KqRbYx4SPJ6XZr1CkitZR1EcU9+9Yh7r8/+no/PBnGjkm0Yh3P2ZYZCl1o2LYH5tla+cKu7ZxdTqEaoAzh4KnDXPYVSnQHoLPoBCNIJ0Qtr2XhQLQADTIXm7huNX1BZtxFY8NOJdm89nVMCWebl5T6J9WLm1Pu4cSDRhBEmlD5nGFeNz6r/BSgYlA==;5:ATbKJdlOE17+y2wtGUdevDUolsucRuQ1R0Ko0Rdunteo4aCOBlVm59PIOLel/BN/XjYbN4087KKhe3lWzSmR7+f6yB7UeUKUMvXicBEp392bQ9NwYiYwT9Ntot5l79s4TK30kboyJvy/up5O7lsBQO9YGz8RHNCPk9Dx8sNUVxI=;7:AbaBHuywXcFGwtkNwdurnj9ORLo/PHOHREAn3lnBBYFkBi5kKHXcRmMzo+v0UkaYd1dyNMbZgc+HCXOyssLmDk+WkfM520JFv3KqtlWJhbr69HNLT1cYKPZkGd+Kxuwt7W+C63NW/iA8LzVE1+fTOQ==
+SpamDiagnosticOutput: 1:5
+SpamDiagnosticMetadata: Default:2
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Dec 2018 12:35:53.0168
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6da94fc2-3ea4-4ba1-0315-08d65f653200
+X-MS-Exchange-CrossTenant-Id: 6f0b9487-4fa8-42a8-aeb4-bf2e2c22d4e8
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB4260
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.6312903
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.1404.009
+X-Microsoft-Exchange-Diagnostics:
+	1;DB7PR06MB4268;9:4ftigoN4uZLu49gXvvlxxlIBOohDYnild8+AKNlUTmRGtqvOMGP0zJPFFW9ZVslOr3LQ+ztYTtjXWTToW50AhT1q0F02h74Y+QIviuDRfOWM0YEw6lDELunUvJpy5XN+
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;ex:0;auth:0;dest:I;ENG:(20160514016)(750119)(520011016);
+X-Microsoft-Antispam-Message-Info:
+	+KoU0WnB1kTza6/iZnkZY+gl0n55FOyYhBp8DDKHfbL5IJXTSaeVKclfmUaHwbneMeEHDexF5eU25qT3SYTURUpfIidPMoz4Ih3l0ZhqQRXn9Elxofi6LfcnLw8sg4K5D2bo7FVCsal68CQOZ5L6sE2ty+4fZ6+V1Gou02U9vbDWiu5aNJpihwo3P6t0kmpegyKEiZ75/CJoRiuP86WwdSpbud6T4BiFAIWYyFsvqRgE18A+QydhSnd++gmAU+Bl94W4Zf4Pgr7v7t5raue9ogyABq8imdBb5Ovy+Ug48eDajuLUTkyajq6h9uEGmfYjDqZMYc9jl1BithzcwmhicpSODlVOT5FGQSOU0tXfnj5ieOWtLZziZk8+77VCYQIBpMMq5TKyZVhprTDnFrmUiBWIMm4rqbgdzDret4gm4k66fHD+Kq+v8YYv67ZYOk8sSdapb1ByNtIKzWU2xIw9yY44wcZCN5jYuSLCfKOI5m3QeTtV+2XdTsPCkb6da8zFPEgLgKskEq36/AKA+yeOmf8DaRI6yfS0brRG8rcq+BKvWCQRAIANQhCwhIEMiV6G0IhpOGTITlVS/KBl6jDgIlsSW3W4ULZSgQGybpHqxA8M+IgPwElcgeOy5hv16RMuR28J2DLT+plMiBrEgMg4saToI++hbsQ7cNnoyzeho2wiR7MxHppj6RtMH/CFvwOrudV2LZLI2EnsKVM3SZJk6A==
+X-Microsoft-Exchange-Diagnostics:
+	1;DB7PR06MB4268;27:kw26VKGCRCf1xEmhq6dorGf2qddA7GiwU5Q77V2ftP6CHy/zJlxJMt6FmV+unif1/NDNKCBuf/XI710RDS0IC9RfhWppFXPJjO0m9zkpxYovfnVZiGg6BEf/NfzZMpDbqPqq8Io4vTDfOPNlWlyikSpCUhqTm/JTQfwu5sw/vO35xryHgKFi/cjxgepMY+Px94umg8tiYwUdkwWeh2ZLVmNWiUPEshq2hwZ4bWt5qBis+HUnfpNZ5ySPdU3guIWj4BAMHtbyHF4YCGJS59hU3nipRBik4gORZQFTUBWgvqHEQuqzVyw1F2Lsb2oo8dCWoxOPdQK5YCB1YB0KmUFXkg==
+Content-type: multipart/alternative;
+	boundary="B_3627376599_1085908817"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3627376599_1085908817
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+Example Two=20
+Office for Global Engagement Newsletter
+Issue 1, December 2018=20
+=20
+=20
+=20
+Welcome to the first issue of the Office for Global Engagement newsletter
+Here we aim to bring you news and updates on how we are implementing Ulster=
+=E2=80=99s Global Engagement Strategy.
+
+2018 has been an extremely busy year for the Office as newly formed teams a=
+nd services bed down and gather momentum for the challenges ahead. However, =
+it=E2=80=99s also been a hugely successful year! In this edition you will read abo=
+ut the breath of activities that  have resulted in a substantial growth in i=
+nternational student enrolments for 2018/19 to date; the introduction of our=
+ #GoGlobal campaign with exciting mobility opportunities on offer to Ulster =
+students and the positive impact they are having on their lives;  how the pe=
+nding introduction of a new Global Partnerships and Programmes Toolkit is se=
+t to streamline processes; and how research expertise in the School of Engin=
+eering is delivering safe water to school children in Uganda.
+
+Finally, the Office for Global Engagement can offer advice and support to c=
+olleagues endeavouring to engage in global initiatives and projects. I would=
+ encourage you to visit our Resource Centre where you can learn more about t=
+he Office=E2=80=99s teams and services and avail of useful guides, tools and advic=
+e.
+
+Catriona McCarthy Director for Global Engagement
+
+=20
+Growth in International Student Enrolments
+As the dust settles on enrolment figures for the September 2018 internation=
+al intake, we reflect on what has been an=20
+extremely busy, but more importantly, successful 2018 in terms of internati=
+onal student recruitment. Considering the Global Recruitment and Engagement =
+(GRE) team was only established in January 2018 and a full team in place by =
+September of this year, complement of staff , the Read  more=20
+=20
+Raising the #GoGlobal Flag
+In line with the University=E2=80=99s commitment to supporting students as global=
+ citizens, the Global Opportunities and Experience (GOE) team within the Off=
+ice for Global Engagement has been busy raising the awareness of outward mob=
+ility opportunities across the  institution. Read  more=20
+=20
+Partnership Toolkit
+Strategic international partnering is central to developing Ulster=E2=80=99s glob=
+al profile and positioning.  The Global Partnerships and Programmes Team (GP=
+PT) within the Office for Global Engagement have been working with colleague=
+s across the institution to deliver  a new Global Partnerships and Programme=
+s Toolkit. Read  more=20
+=20
+Growth in International Student Enrolments
+As the dust settles on enrolment figures for the September 2018 internation=
+al intake, we reflect on what has been an extremely busy, but more important=
+ly, successful 2018 in terms of international student recruitment. Read  mor=
+e=20
+=20
+Delivering Safe Water to Primary Schools in Uganda
+Dr Pilar Fernandez-Ibanez, Lecturer in Engineering Science at Ulster Univer=
+sity, is part of a consortium of 18 international partners involved in the W=
+ATERSPOUTT research project, which since May 2018 has been delivering safe d=
+rinking water to primary school  children in rural Uganda. Read  more=20
+=20
+Global Profile
+=20
+Student  Profile
+Media student, Nathan McGuigan, spent two weeks in China earlier this year =
+as part of the Experience China mobility project. Read more on his experienc=
+e
+
+=20
+Country  Profile
+China is the top source of international students for the UK and is the num=
+ber one sending country of international student to Ulster. Learn more about=
+ the Chinese market and how we continue to build relations and profile with =
+this hugely important market.
+
+=20
+Staff  Profile
+=20
+Global News: Catch up on the latest Global Engagement news
+=20
+Abu  Dhabi emergency services visit Ulster University
+A senior delegation from the Abu Dhabi emergency services recently visited =
+Ulster University to discuss co-operation in the areas of emergency trauma, =
+working in emergency settings, major incident and search and rescue.
+
+=20
+Ulster  University establishes new partnerships with Chinese government to =
+further develop student and faculty engagement
+Four of Ulster University=E2=80=99s leading experts in the fields of healthcare, =
+engineering, stratified medicine and green and innovative SME=E2=80=99s join North=
+ern Ireland delegation to China for the Dalian Leaders Summit.
+
+=20
+Warm  welcome for Belfast=E2=80=99s international students
+Warm welcome for Belfast=E2=80=99s international students
+
+=20
+Global Events: Check out upcoming events and market visits where the Global=
+ Engagement & Recruitment team will be interacting with prospective internat=
+ional students
+=20
+Online  Event | Tier 4 Visa | Facebook Live
+Register your details and send us your questions by clicking the Register b=
+utton, then watch Facebook Live to hear more about studying at Ulster and th=
+e courses we offer. Follow us on Facebook @UlsterUniversityInternational.
+
+=20
+Malaysia  | Sureworks Higher Education Exhibition
+Ulster will be exhibiting with a range of UK universities at Sureworks. An =
+opportunity to learn more about Ulster and life in Northern Ireland
+
+=20
+Online  Event | Marketing | WhatsApp Information Session
+Register your details and we will send you the link to join our WhatsApp In=
+formation Session to find out more about Marketing.
+
+This newsletter was brought to you by the Office for Global Engagement Get =
+in touch - If you have any global news to share please contact globalmarketi=
+ng@ulster.ac.uk=20
+=20
+Get Social
+Twitter
+Facebook
+YouTube
+Contact
+E: global@ulster.ac.uk W: ulster.ac.uk/global View  web version Data  Prote=
+ction Privacy=20
+                                                          =20
+
+
+--B_3627376599_1085908817
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<title></title>
+</head>
+<body bgcolor=3D"#f5f5f5">
+<style type=3D"text/css">
+            /* -------------------------------------
+        GLOBAL
+------------------------------------- */
+* {
+    margin:0;
+    padding:0;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-seri=
+f;
+    font-size: 100%;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:none;
+    width: 100%!important;
+    height: 100%;
+}
+
+
+/* -------------------------------------
+        ELEMENTS
+------------------------------------- */
+a {
+    color: #348eda;
+}
+
+.btn-primary{
+    text-decoration:none;
+    color: #FFF;
+    background-color: #348eda;
+    border:solid #348eda;
+    border-width:10px 20px;
+    line-height:2;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
+    cursor:pointer;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.btn-secondary {
+    text-decoration:none;
+    color: #FFF;
+    background-color: #aaa;
+    border:solid #aaa;
+    border-width:10px 20px;
+    line-height:2;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
+    cursor:pointer;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.last {
+    margin-bottom: 0;
+}
+
+.first{
+    margin-top: 0;
+}
+
+.padding{
+    padding:10px 0;
+}
+
+
+/* -------------------------------------
+        BODY
+------------------------------------- */
+table.body-wrap {
+    width: 100%;
+    padding: 20px;
+}
+
+table.body-wrap .container{
+    border: 1px solid #f0f0f0;
+}
+
+
+/* -------------------------------------
+        FOOTER
+------------------------------------- */
+table.footer-wrap {
+    width: 100%;
+    clear:both!important;
+}
+
+.footer-wrap .container p {
+    font-size:12px;
+    color:#666;
+
+}
+
+table.footer-wrap a{
+    color: #999;
+}
+
+
+/* -------------------------------------
+        TYPOGRAPHY
+------------------------------------- */
+h1,h2,h3{
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-=
+serif; line-height: 1.1; margin-bottom:15px; color:#000;
+    margin: 40px 0 10px;
+    line-height: 1.2;
+    font-weight:200;
+}
+
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 22px;
+}
+
+p, ul {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size:14px;
+}
+
+ul li {
+    margin-left:5px;
+    list-style-position: inside;
+}
+
+/* ---------------------------------------------------
+        RESPONSIVENESS
+        Nuke it from orbit. It's the only way to be sure.
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically s=
+tretch to that width, but will also shrink down on a phone or something */
+.container {
+    display:block!important;
+    max-width:600px!important;
+    margin:0 auto!important; /* makes it centered */
+    clear:both!important;
+}
+
+/* Set the padding on the td rather than the div for Outlook compatibility =
+*/
+.body-wrap .container{
+    padding:20px;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .c=
+ontainer */
+.content {
+    max-width:600px;
+    margin:0 auto;
+    display:block;
+}
+
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+    width: 100%;
+}
+
+.borderTop {
+    padding-top: 40px;
+    border-top: 1px solid #CCC;
+}
+        </style>
+<table class=3D"body-wrap" cellspacing=3D"0">
+<tbody>
+<tr>
+<td></td>
+<td class=3D"container" bgcolor=3D"#FFFFFF">
+<div class=3D"content"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitio=
+nal//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<title>Example Two</title>
+<style>@media only screen{html{min-height:100%;background:#fff}}@media only=
+ screen and (max-width:740px){.small-float-center{margin:0 auto!important;fl=
+oat:none!important;text-align:center!important}}@media only screen and (max-=
+width:740px){table.body img{width:auto;height:auto}table.body center{min-wid=
+th:0!important}table.body .container{width:95%!important}table.body .columns=
+{height:auto!important;-moz-box-sizing:border-box;-webkit-box-sizing:border-=
+box;box-sizing:border-box;padding-left:20px!important;padding-right:20px!imp=
+ortant}table.body .columns .columns{padding-left:0!important;padding-right:0=
+!important}table.body .collapse .columns{padding-left:0!important;padding-ri=
+ght:0!important}th.small-6{display:inline-block!important;width:50%!importan=
+t}th.small-12{display:inline-block!important;width:100%!important}.columns t=
+h.small-12{display:block!important;width:100%!important}table.menu{width:100=
+%!important}table.menu td,table.menu th{width:auto!important;display:inline-=
+block!important}table.menu.vertical td,table.menu.vertical th{display:block!=
+important}table.menu[align=3Dcenter]{width:auto!important}}td {border: none !i=
+mportant;}</style><span class=3D"preheader" style=3D"color:#fff;display:none!imp=
+ortant;font-size:1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!i=
+mportant;opacity:0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"wrapper header float-center" style=3D"Margin:0 a=
+uto;background:#00003f;border-collapse:collapse;border-spacing:0;float:none;=
+margin:0 auto;padding:0;text-align:center;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"wrapper-inner" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Mar=
+gin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica=
+,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.=
+1;margin:0;padding:20px;text-align:left;vertical-align:top;word-wrap:break-w=
+ord">
+<table align=3D"center" class=3D"container" style=3D"Margin:0 auto;background:0 0=
+;border-collapse:collapse;border-spacing:0;margin:0 auto;padding:0;text-alig=
+n:inherit;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-6 large-6 columns first" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:0;padding-left:20px;paddi=
+ng-right:10px;text-align:left;width:340px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://cdn.ulster.ac.uk/home/ulster-frontend/img/ezine/ulster-un=
+iversity-rw.jpg" style=3D"-ms-interpolation-mode:bicubic;clear:both;display:bl=
+ock;max-width:100%;outline:0;text-decoration:none;width:auto"></th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-6 large-6 columns last" style=3D"Margin:0 auto;color:#0a0a0a=
+;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-=
+height:1.1;margin:0 auto;padding:0;padding-bottom:0;padding-left:10px;paddin=
+g-right:20px;text-align:left;width:340px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p class=3D"text-right" style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-fa=
+mily:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1=
+.1;margin:0;margin-bottom:10px;padding:0;padding-top:15px;text-align:right">
+Office for Global Engagement Newsletter<br>
+Issue 1, December 2018</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row intro" style=3D"background:#eee;border-collapse:collapse;bo=
+rder-spacing:0;display:table;padding:0;position:relative;text-align:left;ver=
+tical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-3 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:160px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"20px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:20px;font-weight:400;hyphens:auto;line-height:20px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<img src=3D"https://www.ulster.ac.uk/__data/assets/image/0019/341533/catriona=
+-mccarthy.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear:both;displ=
+ay:block;max-width:100%;outline:0;text-decoration:none;width:auto"></th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-9 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;pa=
+dding-right:20px;text-align:left">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"20px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:20px;font-weight:400;hyphens:auto;line-height:20px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Welcome to the first issue of the Office for Global Engagement newsletter</=
+h2>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Here we aim to bring you news and updates on how we are implementing Ulster=
+=E2=80=99s Global Engagement Strategy.<br>
+<br>
+2018 has been an extremely busy year for the Office as newly formed teams a=
+nd services bed down and gather momentum for the challenges ahead. However, =
+it=E2=80=99s also been a hugely successful year! In this edition you will read abo=
+ut the breath of activities that
+ have resulted in a substantial growth in international student enrolments =
+for 2018/19 to date; the introduction of our #GoGlobal campaign with excitin=
+g mobility opportunities on offer to Ulster students and the positive impact=
+ they are having on their lives;
+ how the pending introduction of a new Global Partnerships and Programmes T=
+oolkit is set to streamline processes; and how research expertise in the Sch=
+ool of Engineering is delivering safe water to school children in Uganda.<br=
+>
+<br>
+Finally, the Office for Global Engagement can offer advice and support to c=
+olleagues endeavouring to engage in global initiatives and projects. I would=
+ encourage you to visit our
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjTsOwyAQBU9jSgQ27OKCIk2uY=
+S1fWyEfGSyU24cy0itGo5FesJqcSY4dNiAp0FGQUWoREjEmD-jNGlAYb2BSovYjNZ7jK57UYmC71=
+cZ7mRykBEgATgazEDoIXmukdWbF7q196rTcpvk-1nvnV6ktnpw8vx5D5fJ2VAbURimx02bu3t8w_=
+v5D9oy1Uo7bESxqsRm9opA_Enc8Gw">
+Resource Centre</a> where you can learn more about the Office=E2=80=99s teams and=
+ services and avail of useful guides, tools and advice.<br>
+<br>
+Catriona McCarthy Director for Global Engagement</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- row 1 -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:0;padding:0;text-align:left;word-wrap:normal">
+Growth in International Student Enrolments</h2>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-5 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;p=
+adding-right:10px;text-align:left;width:280px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-l=
+averty_30790802293_b.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear=
+:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto=
+"></th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-7 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;pa=
+dding-right:20px;text-align:left;width:400px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+<p>As the dust settles on enrolment figures for the September 2018 internat=
+ional intake, we reflect on what has been an
+<br>
+extremely busy, but more importantly, successful 2018 in terms of internati=
+onal student recruitment.</p>
+<p>Considering the Global Recruitment and Engagement (GRE) team was only es=
+tablished in January 2018 and a full team in place by September of this year=
+, complement of staff , the</p>
+<p></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjTkOgzAQAF-DS8vgY5fCRZp8A=
+629y6FAiLARyu9DGWmqmWI4eko4JrVEBnLBiyF0zpoWQMYcIGPPYDBjaJwp1zJWPclbDqrCao6cy=
+GICQJJkXAemE0uhZ8uQW3ak1jjX-imNfTTd8-a6Ln2upcqhKevzdat530QdcdJp__J9-c9qk1Jok=
+mHhCN4M6Hsw7Q-0NjiM" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Ari=
+al,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:=
+left;text-decoration:none">Read
+ more</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- row 1 --></td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- row 1 -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:0;padding:0;text-align:left;word-wrap:normal">
+Raising the #GoGlobal Flag</h2>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-7 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:400px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+<p>In line with the University=E2=80=99s commitment to supporting students as glo=
+bal citizens, the Global Opportunities and Experience (GOE) team within the =
+Office for Global Engagement has been busy raising the awareness of outward =
+mobility opportunities across the
+ institution.</p>
+<p></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjcsOgyAQAL9GjmRVHsuBQy_9D=
+bPAoqa2NYIh_n09NpnTzGGS1xQwB7H6ZEkZzUCo1Ai9tZyjsRFdsoARTaegtDVXOfOHD6qcxOIpj=
+ESK0ZBznHUEgIGNRkI99KCU2PxS61668dENz5vWmjy3UvmQFOX5uhXt-3aJw88yfK90b_67eHMpN=
+PO0Jm81TKidhf4HxSk4eQ" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,A=
+rial,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-alig=
+n:left;text-decoration:none">Read
+ more</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-5 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;pa=
+dding-right:20px;text-align:left;width:280px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-l=
+averty_30790802293_b.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear=
+:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto=
+"></th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- row 1 --></td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- row 1 -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:0;padding:0;text-align:left;word-wrap:normal">
+Partnership Toolkit</h2>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-5 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;p=
+adding-right:10px;text-align:left;width:280px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-l=
+averty_30790802293_b.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear=
+:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto=
+"></th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-7 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;pa=
+dding-right:20px;text-align:left;width:400px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+<p>Strategic international partnering is central to developing Ulster=E2=80=99s g=
+lobal profile and positioning.&nbsp;&nbsp;The Global Partnerships and Progra=
+mmes Team (GPPT) within the Office for Global Engagement have been working w=
+ith colleagues across the institution to deliver
+ a new Global Partnerships and Programmes Toolkit.</p>
+<p></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNTsuKxSAU-5q6s9jW-li4mM38x=
+uVUj1Zuby16Spm_H2E2A4GEEJIEt8Jm4sayCxqkWlGAkXIRk9YYvdLe2KCF8UYNUrQnRxoTnliBM=
+LDd6VkLZaQ1aETcolqUshNoKcU8obeGHW4nutqwfA3zd8fzPON9NMI6gh_vd7fSUTY4umgEMXa-r=
+9DrW1f5pFrC7fOZOO3I_6L8gkr9Q9vz1TicgV-1pAqfDzZOpRzvTKy6NG7lJ_Tb__dYzzRI-MrB6=
+VW8zGq1mH4BQsZWBQ" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial=
+,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:le=
+ft;text-decoration:none">Read
+ more</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- row 1 --></td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- row 1 -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:0;padding:0;text-align:left;word-wrap:normal">
+Growth in International Student Enrolments</h2>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-7 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:400px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+<p>As the dust settles on enrolment figures for the September 2018 internat=
+ional intake, we reflect on what has been an extremely busy, but more import=
+antly, successful 2018 in terms of international student recruitment.</p>
+<p></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjcsOgyAQAL9GjmRVHsuBQy_9D=
+bPAoqa2NYIh_n09NpnTzGGS1xQwB7H6ZEkZzUCo1Ai9tZyjsRFdsoARTaegtDVXOfOHD6qcxOIpj=
+ESK0ZBznHUEgIGNRkI99KCU2PxS61668dENz5vWmjy3UvmQFOX5uhXt-3aJw88yfK90b_67eHMpN=
+PO0Jm81TKidhf4HxSk4eQ" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,A=
+rial,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-alig=
+n:left;text-decoration:none">Read
+ more</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-5 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;pa=
+dding-right:20px;text-align:left;width:280px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-l=
+averty_30790802293_b.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear=
+:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto=
+"></th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- row 1 --></td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- row 1 -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h2 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:24px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:0;padding:0;text-align:left;word-wrap:normal">
+Delivering Safe Water to Primary Schools in Uganda</h2>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-5 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;p=
+adding-right:10px;text-align:left;width:280px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<img src=3D"https://www.ulster.ac.uk/global/newsletter/example-two/safe-water=
+.jpg" alt=3D"" style=3D"-ms-interpolation-mode:bicubic;clear:both;display:block;=
+max-width:100%;outline:0;text-decoration:none;width:auto"></th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-7 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:10px;pa=
+dding-right:20px;text-align:left;width:400px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+<p>Dr Pilar Fernandez-Ibanez, Lecturer in Engineering Science at Ulster Uni=
+versity, is part of a consortium of 18 international partners involved in th=
+e WATERSPOUTT research project, which since May 2018 has been delivering saf=
+e drinking water to primary school
+ children in rural Uganda.</p>
+<p></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjcsOgyAQAL9GjmRVHsuBQy_9D=
+bPAoqa2NYIh_n09NpnTzGGS1xQwB7H6ZEkZzUCo1Ai9tZyjsRFdsoARTaegtDVXOfOHD6qcxOIpj=
+ESK0ZBznHUEgIGNRkI99KCU2PxS61668dENz5vWmjy3UvmQFOX5uhXt-3aJw88yfK90b_67eHMpN=
+PO0Jm81TKidhf4HxSk4eQ" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,A=
+rial,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-alig=
+n:left;text-decoration:none">Read
+ more</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- row 1 --></td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- events -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h3 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:20px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Global Profile</h3>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjrGOgzAQRL8Gd7FMwF5TuEhzv=
+xEt3jVB5wDCi3z5-7g8aYp5M9JoKFicfZrVGghwdJYN-nEcTA_AKTqIfiIwPnrXjabUNYleeOMTh=
+Um9gvN-AIyE0x1igmSchwjORbLUm4lUDi-Ro3TDo7v_NNVa9ZWL8Kkx6uu3RUveZ8zNbFxLZmldA=
+_7D95H5JnVvVOQi3uR2nHtaM6szLHreP9RO_V9Tby4FF36uFMCap7cTmP4L8qxJ0g" style=3D"Ma=
+rgin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;=
+line-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none"><im=
+g src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-laver=
+ty_30790802293_b.jpg" alt=3D"Student Profile" style=3D"-ms-interpolation-mode:bi=
+cubic;border:none;clear:both;display:block;max-width:100%;outline:0;text-dec=
+oration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjktuxCAQRE9jdkFt0_wWLLLJN=
+VADbQ8Tz0eGiTW3D8uRSqqnWlRVCZqSW5OooVhCoxnIISqYreU1G5udLxZcdmZCaGddu9z4zgd1L=
+uISCBHzbBUiuILkE-bMhrOfR0vWSezh0vuzTep7Wn6GzvOUr711PiRl-fodUYyFOg2g1ri3AfVGG=
+w8HADNs1qj8MqDQvfL-tdMfH_0dFVgPDpbFq5jk9bmJI2wyPd5lfP0cETdubVTGWoLVEJ32FuZ_c=
+E1M8w" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;=
+font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-deco=
+ration:none">Student
+ Profile</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Media student, Nathan McGuigan, spent two weeks in China earlier this year =
+as part of the Experience China mobility project. Read more on his experienc=
+e</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjj2OwyAUhE9juiDCvwuKbfYa0=
+QMejhViLMBic_uljDTFfDPSaKJT4G3yZHfRgNQKGVgpBbsbgyloE-waDbPB6kWyNvbU6YYHVugYy=
+dMJptcgmOXerAm41VZwyUMEG5XmKEl2z97Ptoifhf9OjTHolVvHSiHQ6zWjLRcPeZoDR8vYZzcB_=
+-B9Zrz1USaFch29fm5nLWnPSKrbqC-fOE99r5E3tgYbPvbojGIPq1bD7v-TF0k9" style=3D"Marg=
+in:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;li=
+ne-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none"><img =
+src=3D"https://www.ulster.ac.uk/global/newsletter/example-two/china.jpg" alt=3D"=
+Country Profile" style=3D"-ms-interpolation-mode:bicubic;border:none;clear:bot=
+h;display:block;max-width:100%;outline:0;text-decoration:none;width:auto"></=
+a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjj1uxCAQhU9juiAcA4MLijS5x=
+mpgBuyEtS3DiuT2oYz0ivcjfXrkDQaXgtg9AWprWKHTelEzAKdoIbqVQLno7KRV7XtqMvPBNzYms=
+XladQIFwShLiVBrF5c5kqWg5wEDUfzW2lWn5WN6_xzqvctXqY1viVG-vkeVyxmwDHNwr4Xb2EbgH=
+3xehd9aP0eK236g_LqyuH2W4fylcec_Rzy5Vsz82MmDUQ9nVlDzHyskRzw" style=3D"Margin:0;=
+color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-he=
+ight:1.1;margin:0;padding:0;text-align:left;text-decoration:none">Country
+ Profile</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+China is the top source of international students for the UK and is the num=
+ber one sending country of international student to Ulster. Learn more about=
+ the Chinese market and how we continue to build relations and profile with =
+this hugely important market.</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjsFuwyAQRL_G3ILWNnjxgUMu_=
+Y1oWRbHKoktQ0T79-VYaQ7zZqTRRG8puBTU7iOSWawAOWNmGBEl8YLs1ojg2C2DgdL2VPUmb7moS=
+lRPHxls4BlYAtK04soAPMmIQGIgGZX9s9azDPN9mL66Wmv6k0uVSxPrz3ePtnwEyt28pZUstXcd5=
+IdeZ5ZbbUenUiml23kdac-iLr_pcPzGfun_lnpJKbTJY48eLTycXRHGP3F0SQ8" style=3D"Margi=
+n:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;lin=
+e-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none"><img s=
+rc=3D"https://www.ulster.ac.uk/__data/assets/image/0006/154392/daniel-laverty_=
+30790802293_b.jpg" alt=3D"Staff Profile" style=3D"-ms-interpolation-mode:bicubic=
+;border:none;clear:both;display:block;max-width:100%;outline:0;text-decorati=
+on:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjktuxCAQRE9jdkFt0_wWLLLJN=
+VADbQ8Tz0eGiTW3D8uRSqqnWlRVCZqSW5OooVhCoxnIISqYreU1G5udLxZcdmZCaGddu9z4zgd1L=
+uISCBHzbBUiuILkE-bMhrOfR0vWSezh0vuzTep7Wn6GzvOUr711PiRl-fodUYyFOg2g1ri3AfVGG=
+w8HADNs1qj8MqDQvfL-tdMfH_0dFVgPDpbFq5jk9bmJI2wyPd5lfP0cETdubVTGWoLVEJ32FuZ_c=
+E1M8w" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;=
+font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-deco=
+ration:none">Staff
+ Profile</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- events -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h3 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:20px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Global News: Catch up on the latest Global Engagement news</h3>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNTrluxCAU_BrTgcDcBUWa_MaK4=
+9lGWXsjwEb--7DaJtJIcxQzk5z0wSwBZZe0F0oC9UYITpnWsESlo7FJUxONmgStPS-NrHBA8Q0S2=
+pwUQlm7RKv5LA0VbBguLZs19Yp7hp5ua-23Tvxrmr8Heu_kfNYGhfhIzp8RHdDroJky83avC_YAZ=
+UgfTpw2HzKGHcqYjTeuUK4coeIr19zwpwqfR76gjOBGxa0kvO407v7fQTvU6ld45OS0pA8jrabsD=
+9IxUZ0" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif=
+;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-dec=
+oration:none"><img src=3D"https://www.ulster.ac.uk/__data/assets/image/0013/33=
+2122/abu-dhabi.jpeg" alt=3D"Abu Dhabi emergency services visit Ulster Universi=
+ty" style=3D"-ms-interpolation-mode:bicubic;border:none;clear:both;display:blo=
+ck;max-width:100%;outline:0;text-decoration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjs1qwzAQhJ_GulWs_tcHHXrpa=
+5iVtLbVJmmwZEzfPsqtMDDDMHxMiY4SrknUWAJZ7xgIrTWgQuA1-5BxLgEwo58stKuuXW784IM6F=
+7FHZTMpXDGDTkZ747SaAYOxYD3OcxK3uPf-bJP5nPTX0HVd8ry1zoekLM-fUS1LoU4jUGvc2wj1T=
+hsPB1BmmDFaaf0epPOj7JSq_H7yJo64yfT7V8az_0hx59YGYKklBgcLujmAegGngkaO" style=3D"=
+Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:40=
+0;line-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none">A=
+bu
+ Dhabi emergency services visit Ulster University</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+A senior delegation from the Abu Dhabi emergency services recently visited =
+Ulster University to discuss co-operation in the areas of emergency trauma, =
+working in emergency settings, major incident and search and rescue.</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNT0GOhDAMe81wKyrQ0nLgsJf9x=
+ii0gVbLFNSEqeb3W7SXlSI5cmzL8bOGxa5LE2dvQI0aJVilBtkZg6sbjbOTN9I6Oz6UpBJXbjdMm=
+IHRN2HW3lpllFx0N9lJjYBTD53qHTg5gOmafQ7MJz2Gr0f_XaeU0l47MeYWXHv9VCphoQq97GyFw=
+_GxYK7bn0xcKb4xU-SPQGJY9kgBSVSXOCFz7UIhniRK5CBciAkJxXZUT3phYsGHWK_MoUZ5fON-n=
+IL48vcJkhcruGu_s9MGG96OJs9buxwfXz_-X7V5IVHVPKOfjZZPqycju19PtGzC" style=3D"Marg=
+in:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;li=
+ne-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none"><img =
+src=3D"https://www.ulster.ac.uk/__data/assets/image/0013/322213/Ulster-Univers=
+ity-establishes-new-partnerships-with-Chinese-government-to-further-develop-=
+student-and-faculty-engagement.jpg" alt=3D"Ulster University establishes new p=
+artnerships with Chinese government to further develop student and faculty e=
+ngagement" style=3D"-ms-interpolation-mode:bicubic;border:none;clear:both;disp=
+lay:block;max-width:100%;outline:0;text-decoration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNUMuOgzAM_JpyCwqPkPTAoVpp_=
+6Bn5CSGZBcCwqaof7-hp5Uszcj2jMb2vQJrRlvE3mtoO4USTNs2stIaR9dpZ-5eS-NMd2slnXHkc=
+sKEOzD6IvRgnKtlaxvT1QpRjlb5rlN3iwgtKFPMfWDe6NY8bvV3rvM8y2Mmxr0EVx6_uTUMHhgyA=
+SJkyiQuMGFGKasmQ1PX9Yc8P0LxTPGFO0V-CyQGO0cKSCLhKTbYOaejEDcSZ-QgvkJMSCimNWvSg=
+okFr2I8dg7ZyuML53UTxIe_RpC8GMEd8-WdphzjUpQ_21Ts_VTa9e3zH_4fUCxIlPeG6Hut5GDUX=
+cvqD2rMc2c" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-s=
+erif;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text=
+-decoration:none">Ulster
+ University establishes new partnerships with Chinese government to further=
+ develop student and faculty engagement</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Four of Ulster University=E2=80=99s leading experts in the fields of healthcare, =
+engineering, stratified medicine and green and innovative SME=E2=80=99s join North=
+ern Ireland delegation to China for the Dalian Leaders Summit.</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjs1qxSAUhJ8m2UXUGH8WLrrpa=
+1yOesyVJlrUIH372l1h4INhhplgD3A6ujXZoEDIAyloIXbKlMLopfLaBEW113IRtI0UOzkxY4WOY=
+X1bzpig1AQqRDAMlOdcycM4sQe2c4nrZd-9f7dl_1j459QYgzxX61gJePJ8TSvjaBOcMj1RfC8O6=
+18U6r0NvHy5cYulbg6vCK23LeXZz9BTyXBtrT8Bc29rtSdx5SfMp_8n1htbgxNfKVh10Jc-jKLsF=
+1xXT-w" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif=
+;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-dec=
+oration:none"><img src=3D"https://www.ulster.ac.uk/__data/assets/image/0008/31=
+7168/BCC_Global_Belfast_034WEB.jpg" alt=3D"Warm welcome for Belfast=E2=80=99s intern=
+ational students" style=3D"-ms-interpolation-mode:bicubic;border:none;clear:bo=
+th;display:block;max-width:100%;outline:0;text-decoration:none;width:auto"><=
+/a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjr1uxCAQhJ_GlGgx_wVFfEryC=
+CnRGhafEy53MpysvH1IF2mk-TTFzOSgcXVlZXvIFpXRBOiUkiCspZKMTc5nCy45Mylo51463-ibD=
+uyU2TVYgbMu0joBnkjJOQFpreZslPekFKvh2vujTfJlmt-GzvPkz9o6HRwTf36NKMaMHQdga9Tbg=
+P2GGw0HADdMCivMHyyXS3yv9xVrXKgWbD2CVB-vC_98bOwIG1_vP3kc_b_AbtTa6It7DlZDdNpbE=
+L8mvUux" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-seri=
+f;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-de=
+coration:none">Warm
+ welcome for Belfast=E2=80=99s international students</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Warm welcome for Belfast=E2=80=99s international students</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"container float-center" style=3D"Margin:0 auto;b=
+ackground:#fff;border-collapse:collapse;border-spacing:0;float:none;margin:0=
+ auto;padding:0;text-align:center;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- events -->
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" style=3D"Margin:0 auto;color=
+:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:4=
+00;line-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:=
+20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h3 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:20px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Global Events: Check out upcoming events and market visits where the Global=
+ Engagement &amp; Recruitment team will be interacting with prospective inte=
+rnational students</h3>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjrGOwyAQRL_GdCBssFkXFGnuN=
+6IFFgeFmMgQW_f3h66KNMWbV4wm2BkdRMeSDQb1MpNE0FrJ0RiKfjEe1mAkeFgGLeuVYhMb7XRgo=
+8AeNizgJgdKxUlKB6uWY4xGKTLaA67Isn209q6Dug3TT891XeKTa6NDoBefZ1dbLg5zBzppb7VD2=
+XPaif933hIdXPMzVeQRPblSnjynk9hhN-HKb-jPvifZi2rFje4pWDPLO8yrkeMfIIhK2g" style=
+=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:=
+400;line-height:1.1;margin:0;padding:0;text-align:left;text-decoration:none"=
+><img src=3D"https://www.ulster.ac.uk/__data/assets/image/0008/264437/4191.jpg=
+" alt=3D"Online Event | Tier 4 Visa | Facebook Live" style=3D"-ms-interpolation-=
+mode:bicubic;border:none;clear:both;display:block;max-width:100%;outline:0;t=
+ext-decoration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjsFqxDAMRL8mPholliLn4EMv_=
+Y0g20o27W53ib2E_n11LAzMY2CGqYkkxy27I1UWnElBImKAkVm3MnOJS2WIJc4DQruOrftdf_SUr=
+tXdEjBlwlyXMElADYVwQ5ZCBFMWYndPt95fbQgfw_Rpuq7Lv--t6-ml-Pe3RetapYuBtKa9GRwP2=
+dUcAKLZNNsjNsBxGf3Xa3dn2n1-_lb79H_MPbQ1q65HTUywRloYxj9VxkSR" style=3D"Margin:0=
+;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-h=
+eight:1.1;margin:0;padding:0;text-align:left;text-decoration:none">Online
+ Event | Tier 4 Visa | Facebook Live</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Register your details and send us your questions by clicking the Register b=
+utton, then watch Facebook Live to hear more about studying at Ulster and th=
+e courses we offer. Follow us on Facebook @UlsterUniversityInternational.</p=
+>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNzrtuxCAUBNCvMZ0tsHm5oEiT3=
+1hd4PLQeu0IcMj-fUgXaYqjKUbjjQCrgyXZeAVcCqSgOd8oUwqDk8rp3SuqnZYTp7Xn0JaIJxZo6=
+Eky28ooOopMSKvlyjgNNmyBC8adZLiTw6TWvuq0fUzr50jvfbmP2rAs4Jb7Oap4XBaOAfzGs9WBF=
+xzwrhnmehfsV3nWOeWYsMzobwctX-eMPynb_MeVFBMXe739uPh_m7ywVoj4yN4oQR9a7IqyXwTFT=
+vA" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;fon=
+t-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-decorat=
+ion:none"><img src=3D"https://www.ulster.ac.uk/__data/assets/image/0006/265461=
+/3806.jpg" alt=3D"Malaysia | Sureworks Higher Education Exhibition" style=3D"-ms=
+-interpolation-mode:bicubic;border:none;clear:both;display:block;max-width:1=
+00%;outline:0;text-decoration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjkuKwzAQRE9jLUUr-rS80CKbu=
+YZpSS3HM_kYS8HM7dPLQEE9Cqqomjzl2LLaUkVywTNQdM6CQeRWApY4V4RYYpgc9HNrQ6_85IMGV=
+3VLM3ssJc-OmaqLZKtxaJh8I4ste3VPtzH2PtnrdPkRneep3_c--NBU9PtPomWpNEiAeufRBbYHr=
+SwOAEHsErwLRsBGCPp3X9WRVp1f_1U-fY-pB_cu1WWrCT0s0c8I5gPsvUWQ" style=3D"Margin:0=
+;color:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-h=
+eight:1.1;margin:0;padding:0;text-align:left;text-decoration:none">Malaysia
+ | Sureworks Higher Education Exhibition</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Ulster will be exhibiting with a range of UK universities at Sureworks. An =
+opportunity to learn more about Ulster and life in Northern Ireland</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-4 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:16px;padding-left:20px;p=
+adding-right:10px;text-align:left;width:220px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjs1uxCAMhJ8m3ECkCT974NBLX=
+2NlwBC0CUTAFvXti3qqNJK_sa3ReCPA6mBJMl7BLgVy0Pu-8VUpDE4qpx9ece20XHbeRgqdRcxYo=
+aMnhxHacqW9m2-rCC5YsQaUM1Ju4KXQ5DRH73dbts_l42tqjMHeZ-tYGTj2fs1VPIuFcwJ-Y-5tQ=
+slnykj_PL2gvrCnHOk4oDe4b5pyKPWCnkqmDVubk1QTmS0_ftb8n0-ueYeIz-SNEvypxUPx9Rfr7=
+FGa" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans-serif;fo=
+nt-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;text-decora=
+tion:none"><img src=3D"https://www.ulster.ac.uk/__data/assets/image/0009/26485=
+2/4190.jpg" alt=3D"Online Event | Marketing | WhatsApp Information Session" st=
+yle=3D"-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;max=
+-width:100%;outline:0;text-decoration:none;width:auto"></a>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"16px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:inherit;font-family:Helvetica,=
+Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;mar=
+gin-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjskKwzAQQ78mPppJ4mV88KGX_=
+kYY25OlTRdil9C_7xwLAj0EEirRUsI5qS0WT8ZZBkJjRui95zk7nzEUD5jRdQbquc1NL_zkgxoXt=
+cZiDYzsUshzTkSckMjQkFOP6NEFtce1tXftxks3XEXneerPXhsfmrL-3CWapkKNBKhWblVge9DC4=
+gAQxAZn0A4Cpg-gb-9FHXHR6fUt8ul_TD24VqlOW4newoQ2eOh_7glFjQ" style=3D"Margin:0;c=
+olor:#009fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-hei=
+ght:1.1;margin:0;padding:0;text-align:left;text-decoration:none">Online
+ Event | Marketing | WhatsApp Information Session</a></h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,A=
+rial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;marg=
+in-bottom:10px;padding:0;text-align:left">
+Register your details and we will send you the link to join our WhatsApp In=
+formation Session to find out more about Marketing.</p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<span class=3D"preheader" style=3D"color:#fff;display:none!important;font-size:=
+1px;line-height:1px;max-height:0;max-width:0;mso-hide:all!important;opacity:=
+0;overflow:hidden;visibility:hidden"></span>
+<table class=3D"body" style=3D"Margin:0;background:#fff;border-collapse:collaps=
+e;border-spacing:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;height:100%;line-height:1.1;margin:0;padding:0;te=
+xt-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"-moz-hyphens:auto;-we=
+bkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;=
+font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphen=
+s:auto;line-height:1.1;margin:0;padding:0;text-align:left;vertical-align:top=
+;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:720px;width:100%">
+<table align=3D"center" class=3D"wrapper header float-center" style=3D"Margin:0 a=
+uto;background:#00003f;border-collapse:collapse;border-spacing:0;float:none;=
+margin:0 auto;padding:0;text-align:center;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td class=3D"wrapper-inner" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Mar=
+gin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica=
+,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.=
+1;margin:0;padding:20px;text-align:left;vertical-align:top;word-wrap:break-w=
+ord">
+<table align=3D"center" class=3D"container" style=3D"Margin:0 auto;background:0 0=
+;border-collapse:collapse;border-spacing:0;margin:0 auto;padding:0;text-alig=
+n:inherit;vertical-align:top;width:720px">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-12 columns first last" lareg=3D"12" style=3D"Margin:0=
+ auto;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;fo=
+nt-weight:400;line-height:1.1;margin:0 auto;padding:0;padding-bottom:0;paddi=
+ng-left:20px;padding-right:20px;text-align:left;width:700px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+This newsletter was brought to you by the <a href=3D"http://email.mail-eu.gec=
+koform.com/c/eJxNjs0OwiAQhJ-m3CRYfpYeOHjxNczCLthYW1MwjW8v3kzmMl--SYaCxehzFHM=
+gQOMsK_TGaHUG4JwcJD8RKJ-8G4yqx5ybLLzyjo1J3ANk56NTqE0GbSj7TEprnezIE43kxBLurb3=
+qoC_DeO05jkO-l9p4l5jk-9ER8Qv39uS11d7KskVcTrwWLPyDYg9Fxu1D_cD_Ujy51u7cZgpg1c3=
+bCdT5C1lcQpQ" style=3D"Margin:0;color:#009fe3;font-family:Helvetica,Arial,sans=
+-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:left;te=
+xt-decoration:none">
+Office for Global Engagement</a></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+Get in touch - If you have any global news to share please contact <a href=3D=
+"mailto:globalmarketing@ulster.ac.uk" style=3D"Margin:0;color:#009fe3;font-fam=
+ily:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;margin:0;padd=
+ing:0;text-align:left;text-decoration:none">
+globalmarketing@ulster.ac.uk</a></p>
+</th>
+<th class=3D"expander" style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;paddi=
+ng:0!important;text-align:left;visibility:hidden;width:0">
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<table class=3D"spacer" style=3D"border-collapse:collapse;border-spacing:0;padd=
+ing:0;text-align:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td height=3D"30px" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;bo=
+rder-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,s=
+ans-serif;font-size:30px;font-weight:400;hyphens:auto;line-height:30px;margi=
+n:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:to=
+p;word-wrap:break-word">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row" style=3D"border-collapse:collapse;border-spacing:0;display=
+:table;padding:0;position:relative;text-align:left;vertical-align:top;width:=
+100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th class=3D"small-12 large-6 columns first" style=3D"Margin:0 auto;color:#0a0a=
+0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;lin=
+e-height:1.1;margin:0 auto;padding:0;padding-bottom:0;padding-left:20px;padd=
+ing-right:10px;text-align:left;width:340px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Ari=
+al,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;margin=
+-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Get Social</h5>
+<table class=3D"button facebook expand" style=3D"Margin:0 0 16px 0;border-colla=
+pse:collapse;border-spacing:0;margin:0 0 16px 0;padding:0;text-align:left;ve=
+rtical-align:top;width:100%!important">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;background:#3B59=
+98!important;border:2px solid #009fe3;border-collapse:collapse!important;bor=
+der-color:#3B5998;color:#fff;font-family:Helvetica,Arial,sans-serif;font-siz=
+e:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;text-=
+align:left;vertical-align:top;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:0;width:100%"><a href=3D"http://email=
+.mail-eu.geckoform.com/c/eJwljUsOgyAUAE8jS_KUz4MFi256DcPnoaRqG8GY3r4kTWYzmcU=
+kp3wwObDiEnqpFYE3UgoYESlHjdHYhGCi0YOEepfc-EIHnb5RYqvzKDXaZMKkNYKcbMxCIAQBWgk=
+aM9vc2tqnDuIxTM9Ou0trdPL43rtdW-1yHaUcbWOnW3h4f1M__QP3kV8vtlOtfqG5JIcKZqMswvg=
+DWck5xA" align=3D"center" class=3D"float-center" style=3D"Margin:0;border:0 solid =
+#009fe3;border-radius:3px;color:#fff;display:inline-block;font-family:Helvet=
+ica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:1.1;margin:0=
+;padding:8px 16px 8px 16px;padding-left:0;padding-right:0;text-align:center;=
+text-decoration:none;width:100%">Twitter</a></center>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"expander" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0=
+;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.1;mar=
+gin:0;padding:0!important;text-align:left;vertical-align:top;visibility:hidd=
+en;width:0;word-wrap:break-word">
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"button twitter expand" style=3D"Margin:0 0 16px 0;border-collap=
+se:collapse;border-spacing:0;margin:0 0 16px 0;padding:0;text-align:left;ver=
+tical-align:top;width:100%!important">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;background:#1dac=
+ed!important;border:2px solid #009fe3;border-collapse:collapse!important;bor=
+der-color:#1daced;color:#fff;font-family:Helvetica,Arial,sans-serif;font-siz=
+e:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;text-=
+align:left;vertical-align:top;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:0;width:100%"><a href=3D"http://email=
+.mail-eu.geckoform.com/c/eJwdjTGOwyAQRU9jSoRtYHBBkSbSHiB1NDCDg-LAypC1cvu1Iv3=
+mPT3pkzcYXAoiewLU1rBCp_WsRgBO0UJ0C4Fy0dlBq3bk1OXKhXfsTOLhp6SDZTKTIQfBxjQ5Ql6=
+05XkEpZLY_KP33zbMl2G6njuOQyaMHGp9ylhfp7ptrfN-K_mP95b756ecWLDnWnATu19lqB8679_=
+fUGKU76d4cWu48j2TB6Puziygxn8g8ULm" align=3D"center" class=3D"float-center" style=
+=3D"Margin:0;border:0 solid #009fe3;border-radius:3px;color:#fff;display:inlin=
+e-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:70=
+0;line-height:1.1;margin:0;padding:8px 16px 8px 16px;padding-left:0;padding-=
+right:0;text-align:center;text-decoration:none;width:100%">Facebook</a></cen=
+ter>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"expander" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0=
+;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.1;mar=
+gin:0;padding:0!important;text-align:left;vertical-align:top;visibility:hidd=
+en;width:0;word-wrap:break-word">
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"button google expand" style=3D"Margin:0 0 16px 0;border-collaps=
+e:collapse;border-spacing:0;margin:0 0 16px 0;padding:0;text-align:left;vert=
+ical-align:top;width:100%!important">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:=
+collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;t=
+ext-align:left;vertical-align:top;word-wrap:break-word">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<td style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;background:#DB4A=
+39!important;border:2px solid #009fe3;border-collapse:collapse!important;bor=
+der-color:#DB4A39;color:#fff;font-family:Helvetica,Arial,sans-serif;font-siz=
+e:14px;font-weight:400;hyphens:auto;line-height:1.1;margin:0;padding:0;text-=
+align:left;vertical-align:top;word-wrap:break-word">
+<center data-parsed=3D"" style=3D"min-width:0;width:100%"><a href=3D"http://email=
+.mail-eu.geckoform.com/c/eJwNjj2TgyAURX-NdsuggjwKiv2skyKT0nnAQ02M7gqMyb9fZm5=
+x5xT3XG8kWgi2no1XKHpJHEGIjjdKUXC9cqC94uCgrwSPxxwSG2mlHRP5ejIWsJVdIGq806iDFhC=
+U5B3X4EIou4uZUvqNVfdetT8lx3Gw15ZTtsTc9ijETbiutJR2-cT8_Lq-fceTbofLx_V8-3Nan-v=
+djMxuL18u5CUm2hk6lu_1g2LEkYbZmyIdQGrFm3_VmEJE" align=3D"center" class=3D"float-c=
+enter" style=3D"Margin:0;border:0 solid #009fe3;border-radius:3px;color:#fff;d=
+isplay:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;fo=
+nt-weight:700;line-height:1.1;margin:0;padding:8px 16px 8px 16px;padding-lef=
+t:0;padding-right:0;text-align:center;text-decoration:none;width:100%">YouTu=
+be</a></center>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"expander" style=3D"-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0=
+;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.1;mar=
+gin:0;padding:0!important;text-align:left;vertical-align:top;visibility:hidd=
+en;width:0;word-wrap:break-word">
+</td>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"small-12 large-6 columns last" style=3D"Margin:0 auto;color:#0a0a0=
+a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line=
+-height:1.1;margin:0 auto;padding:0;padding-bottom:0;padding-left:10px;paddi=
+ng-right:20px;text-align:left;width:340px">
+<table style=3D"border-collapse:collapse;border-spacing:0;padding:0;text-alig=
+n:left;vertical-align:top;width:100%">
+<tbody>
+<tr style=3D"padding:0;text-align:left;vertical-align:top">
+<th style=3D"Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:400;line-height:1.1;margin:0;padding:0;text-align:l=
+eft">
+<h5 style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Ari=
+al,sans-serif;font-size:16px;font-weight:400;line-height:1.1;margin:0;margin=
+-bottom:10px;padding:0;text-align:left;word-wrap:normal">
+Contact</h5>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+E: <a href=3D"mailto:global@ulster.ac.uk" style=3D"Margin:0;color:#009fe3;font-=
+family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;margin:0;p=
+adding:0;text-align:left;text-decoration:none">
+global@ulster.ac.uk</a></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+W: <a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjUsKwyAUAE8Tl_ISP08XLr=
+rpNYL61ITapkRD6O2b7gqzGgaGnPLB5MBWR-ilVgm8kVLAiJhy1BiNJQQTjR4ktHPNnZf0Srvvid=
+jilJWjylHoyVIeQySwGY1XRIIAIbDqlt7fbZjuP8TtPE9-1NbTzn3kx-OypW7BV7a7wsP2oevzH7=
+Bnas2XNK_kUMFslEUYvxjvOTE" style=3D"Margin:0;color:#009fe3;font-family:Helveti=
+ca,Arial,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;text-=
+align:left;text-decoration:none">
+ulster.ac.uk/global</a></p>
+<hr>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjs0OwiAQhJ-m3CSA_PXAwYuvY=
+RZ2aRvRmoJB316OJnOY-SaTDAYD0efItoAOtDUkwGt9FtI5ysm65Gd0widvJy1q33LjCz3pgEbI1=
+iCztCJZcMpCzGgMKQkKJXltUIFkJaytvep0vkzqOtR75-9SGx0cEn_fB1rKHqEM86ReC7XRjUAfe=
+LwKnVrf2REWHvcvjgv_W_agWmGh24bBGXHzZnZC_gDWkEMS" style=3D"Margin:0;color:#009f=
+e3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;ma=
+rgin:0;padding:0;text-align:left;text-decoration:none">View
+ web version</a></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjjEOwyAQBF9jSnQkYI6CIk2-Y=
+R1wdlAc2wIsK78PZaSpZrTSJm8o4BxE9smSHg0DodZ3UNbyHEcb0SULGHEcNNQrz00uvHGhxkm8_=
+M2QChqNMiooNYLD2TKgNgDkKDix-ldrRx3uj-H27FzXJc-1Ni6SojzfXdF6frZMW6rnceylp9pto=
+kZH2RvHlvdNFL_IsH9Tf_E_Fx-ulRaecvLWwITGWVA_dj1EYA" style=3D"Margin:0;color:#00=
+9fe3;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;=
+margin:0;padding:0;text-align:left;text-decoration:none">Data
+ Protection</a></p>
+<p style=3D"Margin:0;Margin-bottom:10px;color:#fff;font-family:Helvetica,Aria=
+l,sans-serif;font-size:14px;font-weight:400;line-height:1.1;margin:0;margin-=
+bottom:10px;padding:0;padding-top:15px;text-align:left">
+<a href=3D"http://email.mail-eu.geckoform.com/c/eJxNjc0KwyAQhJ8mHsXUn90cPPTS1=
+wi6rklI25RokL59PRYGZvj4YJK3IWKOYvMJgnGWVUBjtBoBOJMDwimBQkI3GFXalqtc-M1nqJzE6=
+klrQhy7mzNO2pB1BH0gRbDJOfH0a62fMuj7cHv0tNbk9SyVTxlIXntHIR5X7U3HsW9cxOkXGY9v6=
+of_pnhxKWHheUserJrRTqDGHyHNPCg" style=3D"Margin:0;color:#009fe3;font-family:He=
+lvetica,Arial,sans-serif;font-weight:400;line-height:1.1;margin:0;padding:0;=
+text-align:left;text-decoration:none">Privacy</a></p>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- prevent Gmail on iOS font size manipulation -->
+<div style=3D"display:none;white-space:nowrap;font:15px courier;line-height:0=
+">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs=
+p; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://email.mail-eu.geckoform.co=
+m/o/eJwNy0kOwyAMAMDXlCMyBMfOgbdEBhsadZNCoqq_b64jjWaUwq24LStJmtFAOKUJApG1OlPl=
+RQm48nxLML5bO3y3t-1ymLp7RsYWllhVoNSJAIs2okiXs8QIbs_dl89Pr30-x2G7l-rPh3vZGNJt=
+3TQTwsq4EIQ_sTYqiQ">
+</div>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+
+--B_3627376599_1085908817--
